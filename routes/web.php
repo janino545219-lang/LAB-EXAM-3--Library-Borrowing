@@ -12,8 +12,8 @@ use App\Models\Penalty;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('landing');
-})->name('landing');
+    return redirect()->route('dashboard');
+});
 
 Route::get('/dashboard', function () {
     $totalBooks = Book::sum('copies_available');
